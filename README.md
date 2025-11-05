@@ -5,9 +5,7 @@
 
 ---
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Sidharthavyas/Portfolio/main/public/banner.png" alt="Ninja Portfolio Banner" width="100%">
-</p>
+
 
 <p align="center">
   <a href="https://portfolio-two-taupe-31.vercel.app/">
