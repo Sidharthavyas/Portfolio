@@ -195,7 +195,7 @@ Sidhartha Vyas
 
 GitHub: @Sidharthavyas
 Portfolio: https://portfolio-two-taupe-31.vercel.app/
-Email: your.email@example.com
+Email: vyassidhartha5@gmail.com
 🙏 Acknowledgments
 shadcn/ui - Component library
 Radix UI - Primitive components
