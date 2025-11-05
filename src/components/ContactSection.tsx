@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MessageCircle } from 'lucide-react';
 import ShadowBladeVector from '../imports/ShadowBladeVector1';
 
 const socialLinks = [
@@ -9,21 +9,31 @@ const socialLinks = [
     icon: Github,
     label: 'GitHub',
     href: 'https://github.com/Sidharthavyas',
+    color: '#ffffff',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/sidhartha-vyas/',
+    color: '#0077b5',
+  },
+  {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    href: 'https://wa.me/919029562156?text=Hi%20Sidhartha,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect!',
+    color: '#25D366',
   },
   {
     icon: Mail,
     label: 'Email',
-    href: 'mailto:vsidhartha71@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=vsidhartha71@gmail.com&su=Hey%20Sidhartha%20-%20Let\'s%20Connect&body=Hi%20Sidhartha,%0A%0AI%20found%20your%20portfolio%20and%20I\'m%20interested%20in%20discussing...',
+    color: '#EA4335',
   },
   {
     icon: Phone,
     label: 'Phone',
     href: 'tel:+919029562156',
+    color: '#00ff88',
   },
 ];
 
@@ -88,7 +98,7 @@ export function ContactSection() {
               <motion.a
                 key={index}
                 href={link.href}
-                target="_blank"
+                target={link.href.startsWith('tel:') ? '_self' : '_blank'}
                 rel="noopener noreferrer"
                 initial={{ scale: 0, rotate: -180 }}
                 animate={
@@ -116,8 +126,12 @@ export function ContactSection() {
                     delay: index * 0.2,
                   }}
                 />
-                <div className="relative w-16 h-16 flex items-center justify-center bg-[#121212] border-2 border-[#1e1e1e] rounded-full group-hover:border-[#00ff88] transition-colors duration-300">
-                  <Icon className="text-[#00ff88]" size={24} />
+                <div className="relative w-16 h-16 flex items-center justify-center bg-[#121212] border-2 border-[#1e1e1e] rounded-full group-hover:border-[#00ff88] transition-all duration-300">
+                  <Icon 
+                    className="transition-colors duration-300" 
+                    style={{ color: link.color }}
+                    size={24} 
+                  />
                 </div>
                 <p className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[#d4d4d4] text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {link.label}
@@ -125,36 +139,6 @@ export function ContactSection() {
               </motion.a>
             );
           })}
-        </motion.div>
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <a
-            href="mailto:vsidhartha71@gmail.com"
-            className="inline-block group relative"
-          >
-            <motion.div
-              className="absolute inset-0 bg-[#00ff88] blur-xl opacity-50"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            />
-            <div className="relative bg-[#00ff88] text-[#0a0a0a] px-8 py-4 rounded-full group-hover:bg-[#0a0a0a] group-hover:text-[#00ff88] group-hover:border group-hover:border-[#00ff88] group-hover:shadow-[0_0_15px_#00ff88] transition-all duration-300 uppercase tracking-wide" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600 }}>
-              <span className="flex items-center gap-2">
-                <Mail size={20} />
-                Send Message
-              </span>
-            </div>
-          </a>
         </motion.div>
 
         {/* Footer info */}

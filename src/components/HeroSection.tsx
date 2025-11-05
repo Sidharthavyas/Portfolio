@@ -63,7 +63,7 @@ export function HeroSection() {
               }}
             />
             
-            {/* Main title with typewriter effect */}
+            {/* Main title with typewriter effect - FASTER SPEED */}
             <h1 
               className="relative text-[#e6ffe6] tracking-[0.2em] text-4xl md:text-6xl lg:text-7xl font-bold" 
               style={{ fontFamily: "'Exo 2', sans-serif" }}
@@ -71,7 +71,7 @@ export function HeroSection() {
               <TypewriterText
                 text="THE SILENT BUILDER"
                 delay={500}
-                speed={35}
+                speed={15}  // Changed from 35 to 15 for faster typing
                 className="text-[#e6ffe6] tracking-[0.2em]"
                 style={{ fontFamily: "'Exo 2', sans-serif" }}
                 onComplete={() => setTitleComplete(true)}
@@ -112,7 +112,7 @@ export function HeroSection() {
               <TypewriterText
                 text="Sidhartha Vyas"
                 delay={titleComplete ? 300 : 99999}
-                speed={30}
+                speed={20}  // Also made name typing a bit faster
                 className="text-[#00ff88]"
                 style={{ fontFamily: "'Exo 2', sans-serif" }}
               />
