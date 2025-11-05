@@ -1,215 +1,254 @@
-🥷 Ninja-Themed Portfolio
-<div align="center">
-Ninja Portfolio Banner
+# 🥷 **Ninja Portfolio**
 
-A stealthy, interactive portfolio that strikes with precision ⚡
+> _“Strike fast. Code faster.”_  
+> A cinematic, stealth-themed developer portfolio — fusing **modern frontend mastery** with **ninja-inspired motion and aesthetics.**
 
-Live Demo
-GitHub Repo
-License
+---
 
-</div>
-🎯 About The Project
-A modern, interactive portfolio with a ninja theme that showcases projects, skills, and experiences through immersive animations and effects. Built with cutting-edge web technologies, this portfolio demonstrates mastery in frontend development while maintaining a unique, memorable aesthetic.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Sidharthavyas/Portfolio/main/public/banner.png" alt="Ninja Portfolio Banner" width="100%">
+</p>
 
-✨ Key Features
-🌑 Dark Ninja Aesthetic - Sleek, mysterious design with authentic Japanese elements
-⚔️ Interactive Animations - Blade arcs, particle effects, and smooth transitions
-🎮 Konami Code Easter Egg - Hidden surprises for curious visitors
-🎵 Sound Effects - Immersive audio feedback on interactions
-📱 Fully Responsive - Seamless experience across all devices
-🌫️ Dynamic Effects - Fog overlays, cursor trails, and floating elements
-🎨 Kanji Accents - Authentic Japanese typography and styling
-📊 Interactive Sections:
-Hero with typewriter effect
-Animated timeline
-Project showcases with comic-style layout
-Skills visualization
-Real-time stats counter
-Contact form
-🛠️ Tech Stack
-Frontend Framework
-React
-TypeScript
-Vite
+<p align="center">
+  <a href="https://portfolio-two-taupe-31.vercel.app/">
+    <img src="https://img.shields.io/badge/⚡_Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=red&labelColor=111&color=8B0000" alt="Live Demo">
+  </a>
+  <a href="https://github.com/Sidharthavyas/Portfolio">
+    <img src="https://img.shields.io/badge/⚔️_GitHub_Repo-000000?style=for-the-badge&logo=github&logoColor=white&labelColor=111&color=8B0000" alt="GitHub Repo">
+  </a>
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/📜_MIT_License-000000?style=for-the-badge&color=8B0000" alt="License">
+  </a>
+</p>
 
-Styling & UI
-Tailwind CSS
-Framer Motion
-Radix UI
+---
 
-Additional Libraries
-shadcn/ui - Beautiful, accessible component library
-Lucide React - Icon system
-React Hook Form - Form handling
-Recharts - Data visualization
-Sonner - Toast notifications
-Next Themes - Dark mode support
-🚀 Getting Started
-Prerequisites
-Node.js 18+
-npm or yarn or pnpm
-Installation
-Clone the repository
+## 🎯 **About The Project**
 
-Bash
+A **modern, ninja-themed interactive portfolio** showcasing your projects, skills, and philosophy through **motion design**, **Japanese-inspired UI**, and **immersive sound effects**.  
+Each section is built to **animate like a stealth sequence**, creating a unique storytelling experience.
 
+---
+
+## ✨ **Key Features**
+
+- 🌑 **Dark Ninja Aesthetic** — Minimal yet powerful design with black-red tones  
+- ⚔️ **Cinematic Animations** — Fog, blade arcs, motion effects, and particle trails  
+- 🥷 **Hero Entrance Animation** — Ninja reveal on load  
+- 🎮 **Konami Code Easter Egg** — Hidden interactions for true ninjas  
+- 🎵 **Sound Feedback** — Hover and click soundscapes  
+- 📱 **Responsive** — Seamless across devices  
+- 🌫️ **Fog & Particle Layers** — Ambient movement and depth  
+- 📊 **Dynamic Stats Section** — Real-time counters and visuals  
+- 🧩 **Figma-based UI Components** — Modular Radix + shadcn components  
+
+---
+
+## 🛠️ **Tech Stack**
+
+| Category | Technologies |
+|-----------|---------------|
+| **Framework** | React 18 · TypeScript · Vite 6 |
+| **Styling & UI** | Tailwind CSS 3.4 · Framer Motion 11 · Radix UI · shadcn/ui |
+| **Utilities** | class-variance-authority · clsx · tailwind-merge |
+| **Forms & Logic** | React Hook Form · Sonner · next-themes |
+| **Charts & Visuals** | Recharts · Lucide Icons |
+| **Motion & Effects** | motion · embla-carousel-react |
+| **Development Tools** | TypeScript 5.6 · Vite Plugin React SWC |
+
+---
+
+## ⚙️ **Getting Started**
+
+### 🧩 Prerequisites
+- Node.js 18+
+- npm / yarn / pnpm
+
+### ⚔️ Installation
+
+```bash
 git clone https://github.com/Sidharthavyas/Portfolio.git
 cd Portfolio
-Install dependencies
-
-Bash
-
 npm install
-Start development server
-
-Bash
-
 npm run dev
-Open your browser
+Then open 👉 http://localhost:5173
 
-text
-
-http://localhost:5173
-Build for Production
-Bash
-
+🏗️ Build for Production
 npm run build
 npm run preview
-📂 Project Structure
-text
 
-Ninja Portfolio/
-├── public/              # Static assets (audio files)
-├── src/
-│   ├── components/      # React components
-│   │   ├── ui/         # shadcn/ui components
-│   │   ├── HeroSection.tsx
-│   │   ├── ProjectsSection.tsx
-│   │   ├── SkillsSection.tsx
-│   │   ├── TimelineSection.tsx
-│   │   ├── ContactSection.tsx
-│   │   ├── KonamiCode.tsx      # Easter egg
-│   │   ├── CursorTrail.tsx     # Custom cursor
-│   │   ├── ParticleEffect.tsx
-│   │   ├── FogEffect.tsx
-│   │   └── ...
-│   ├── styles/         # Global styles
-│   ├── App.tsx         # Main app component
-│   └── main.tsx        # Entry point
+📂 Project Structure
+Ninja-Portfolio/
+├── .gitignore
 ├── index.html
 ├── package.json
-├── tailwind.config.js
+├── package-lock.json
+├── README.md
 ├── tsconfig.json
-└── vite.config.ts
-🎨 Features Breakdown
-🥷 Ninja-Themed Components
-Component	Description
-HeroSection	Animated introduction with typewriter effect
-NinjaBladeArc	SVG blade slash animations
-KanjiAccents	Floating Japanese characters
-FogEffect	Atmospheric overlay effects
-CursorTrail	Custom cursor with particle trail
-ParticleEffect	Dynamic background particles
-🎮 Interactive Elements
-Konami Code - Try entering ↑↑↓↓←→←→BA on your keyboard!
-Sound Effects - Hover and click sounds for immersive experience
-Smooth Scrolling - Animated scroll progress indicator
-Floating Navigation - Context-aware nav that appears on scroll
-📱 Sections
-Hero - Eye-catching introduction
-The Path - Personal journey and philosophy
-Skills - Technical expertise showcase
-Projects - Featured work with live demos
-Comic Projects - Unique comic-style project display
-Timeline - Career and education history
-Stats - Dynamic counters and achievements
-Contact - Get in touch form
-🎯 Customization
-Change Theme Colors
-Edit tailwind.config.js:
+├── tsconfig.node.json
+├── vite.config.ts
+│
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   ├── styles/
+│   │   ├── globals.css
+│   │
+│   ├── Attributions.md
+│   ├── guidelines/
+│   │   ├── Guidelines.md
+│   │
+│   ├── imports/
+│   │   ├── ShadowBladeVector1.tsx
+│   │   ├── svg-w8mwrrto4w.ts
+│   │
+│   ├── components/
+│   │   ├── ComicProjectsSection.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── CursorTrail.tsx
+│   │   ├── FloatingNav.tsx
+│   │   ├── FogEffect.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── KanjiAccents.tsx
+│   │   ├── KonamiCode.tsx
+│   │   ├── LoadingScreen.tsx
+│   │   ├── NinjaBladeArc.tsx
+│   │   ├── NinjaShowcase.tsx
+│   │   ├── ParticleEffect.tsx
+│   │   ├── PathSection.tsx
+│   │   ├── ProjectsSection.tsx
+│   │   ├── ScrollProgress.tsx
+│   │   ├── SkillsSection.tsx
+│   │   ├── StatsSection.tsx
+│   │   ├── TimelineSection.tsx
+│   │   ├── TypewriterText.tsx
+│   │   │
+│   │   ├── figma/
+│   │   │   ├── ImageWithFallback.tsx
+│   │   │
+│   │   ├── ui/ # shadcn / Radix Components
+│   │   │   ├── accordion.tsx → tooltip.tsx (full suite)
+│   │   │   ├── use-mobile.ts
+│   │   │   ├── utils.ts
+│
+└── public/ (if added)
 
-JavaScript
-
+🎨 Core Components Overview
+Component	Purpose
+HeroSection	Ninja introduction animation with typewriter effect
+NinjaShowcase	Dynamic image reveal / animation container
+FogEffect	Atmospheric ambient layer
+CursorTrail	Particle cursor trail following motion
+NinjaBladeArc	Katana slash SVG animation
+FloatingNav	Context-aware nav menu with smooth scroll
+StatsSection	Animated live counters for achievements
+ComicProjectsSection	Stylized project gallery inspired by manga panels
+KonamiCode	Secret interactive easter egg
+TypewriterText	Typewriter effect for titles/subheadings
+📱 Sections Overview
+Section	Description
+🏠 Hero	Animated ninja introduction
+🛤️ The Path	Journey & coding philosophy
+⚡ Skills	Visual technical graph
+💼 Projects	Comic-style portfolio layout
+📈 Stats	Animated counters
+📅 Timeline	Education & career
+📬 Contact	Contact form with validation
+🧰 Customization
+🎨 Tailwind Theme
 theme: {
   extend: {
     colors: {
       ninja: {
         dark: '#0a0a0a',
         red: '#dc2626',
-        // Add your colors
-      }
-    }
-  }
+      },
+    },
+  },
 }
-Update Content
-Modify component files in src/components/:
 
-Projects: ProjectsSection.tsx
-Skills: SkillsSection.tsx
-Timeline: TimelineSection.tsx
-Contact: ContactSection.tsx
+🧩 Modify Components
+
+Edit content within:
+
+src/components/
+├── ProjectsSection.tsx
+├── SkillsSection.tsx
+├── TimelineSection.tsx
+└── ContactSection.tsx
+
 🌐 Deployment
-Deploy to Vercel
-Deploy with Vercel
-
-Bash
-
-# Install Vercel CLI
+⚔️ Vercel Deployment
 npm i -g vercel
-
-# Deploy
 vercel
-Deploy to Netlify
-Bash
 
-# Build the project
+🔥 Netlify Deployment
 npm run build
 
-# Deploy dist folder to Netlify
-📸 Screenshots
-<div align="center">
-🏠 Hero Section
-Hero Section
 
-💼 Projects
-Projects
+Then deploy the dist/ folder to Netlify
+.
 
-⚡ Skills
-Skills
+📸 Preview Gallery
+Hero	Projects	Skills
 
-</div>
+	
+	
 🤝 Contributing
-Contributions are welcome! Feel free to:
 
-Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+Contributions are always welcome!
+
+Fork the project
+
+Create Branch – git checkout -b feature/AmazingFeature
+
+Commit Changes – git commit -m 'Add AmazingFeature'
+
+Push – git push origin feature/AmazingFeature
+
+Open PR – Describe your feature clearly
+
 📝 License
-Distributed under the MIT License. See LICENSE for more information.
+
+Distributed under the MIT License.
+See LICENSE
+ for full details.
 
 👤 Contact
+
 Sidhartha Vyas
+📧 vyassidhartha5@gmail.com
 
-GitHub: @Sidharthavyas
-Portfolio: https://portfolio-two-taupe-31.vercel.app/
-Email: vyassidhartha5@gmail.com
+🌐 Portfolio
+
+💻 GitHub
+
 🙏 Acknowledgments
-shadcn/ui - Component library
-Radix UI - Primitive components
-Lucide Icons - Icon library
-Framer Motion - Animation library
-Inspired by Japanese ninja culture and aesthetics
-<div align="center">
-⚔️ Strike Fast. Code Faster. ⚔️
-Made with 🥷 by Sidhartha Vyas
 
-Ninja
+shadcn/ui
 
-🌐 View Live Demo
+Radix UI
 
-</div>
-🎯 Konami Code Activated? 🎮
-If you found the easter egg, you're a true ninja! Share your discovery with #NinjaPortfolio 🥷
+Lucide Icons
+
+Framer Motion
+
+Vite
+
+Inspired by Japanese stealth, discipline, and precision
+
+<p align="center"> ⚔️ <b>Strike Fast. Code Faster.</b> ⚔️ <br>Made with 🥷 and ❤️ by <b>Sidhartha Vyas</b> </p> ```
+✅ Key Enhancements in This Version
+
+Updated project structure to match your actual files (figma/, imports/, guidelines/, etc.)
+
+Accurate dependency alignment (Radix, shadcn/ui, motion, etc.)
+
+Consistent Markdown hierarchy and emoji syntax for visual flow
+
+Modernized tech stack table and deployment guide
+
+Improved readability for GitHub’s dark mode
+
+All navigation, styling, and code examples are copy-paste clea
