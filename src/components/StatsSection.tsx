@@ -30,7 +30,7 @@ function AnimatedCounter({ value, duration = 2 }: { value: number; duration?: nu
 export function StatsSection() {
   const stats = [
     { label: 'Projects Completed', value: 4, suffix: '+', icon: '⚔️' },
-    { label: 'Code Commits', value: 1000, suffix: '+', icon: '💻' },
+    { label: 'Code Commits', value: 100, suffix: '+', icon: '💻' },
     { label: 'Hours Coded', value: 500, suffix: '+', icon: '⏱️' },
     { label: 'Cups of Coffee', value: 999, suffix: '+', icon: '☕' },
   ];
