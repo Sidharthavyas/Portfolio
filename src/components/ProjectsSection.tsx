@@ -12,7 +12,7 @@ const projects = [
     description: 'AI-powered interview simulator — built to challenge and refine technical interview skills through realistic, intelligent simulations.',
     tech: ['Next.JS', 'React.JS', 'Ai', 'Firebase','Better-Auth'],
     link: 'https://ai-mock-interview-mu-brown.vercel.app/sign-in',
-    github: 'https://github.com/Sidharthavyas',
+    github: 'https://github.com/Sidharthavyas/Ai-mock-Interview',
   },
   {
     title: 'NidssCrochet',
@@ -20,7 +20,7 @@ const projects = [
     description: 'A creative handmade store — where code meets craft in a beautifully designed e-commerce experience.',
     tech: ['Next.js', 'CSS', 'GSAP', 'MongoDB'],
     link: 'https://nidsscrochet-shopping.vercel.app/',
-    github: 'https://github.com/Sidharthavyas',
+    github: 'https://github.com/Sidharthavyas/Nidsscrochet',
   },
   {
     title: 'NexLearn - A Learning Mangement System',
@@ -28,7 +28,7 @@ const projects = [
     description: 'Learning platform — precision in structure and design for seamless course navigation and progress tracking.',
     tech: ['React', 'Express.JS', 'Redux', 'MongoDB','Clerk','Stripe'],
     link: 'https://lms-frontend-two-tau.vercel.app/',
-    github: 'https://github.com/Sidharthavyas',
+    github: 'https://github.com/Sidharthavyas/LMS',
   },
 ];
 
