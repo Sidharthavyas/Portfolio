@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/avif" href="/ninja.avif" />
+  <link rel="icon" type="image/png" href="/ninja.png" />
+  <link rel="shortcut icon" href="/ninja.avif" />
+
   <!-- SEO Meta Tags -->
-  <title>John Doe | Full-Stack Developer & Code Ninja</title>
+  <title>Sidhartha Vyas | Full-Stack Developer & Code Ninja</title>
   <meta name="description" content="Experienced full-stack developer specializing in React, TypeScript, and modern web technologies. Building exceptional digital experiences with ninja-level precision." />
   <meta name="keywords" content="full-stack developer, React developer, TypeScript, web development, portfolio" />
   <meta name="author" content="Sidhartha Vyas" />
   <link rel="canonical" href="https://yourwebsite.com" />
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yourwebsite.com/" />
@@ -19,7 +24,7 @@
   <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://yourwebsite.com/" />
@@ -27,70 +32,77 @@
   <meta name="twitter:description" content="Experienced full-stack developer specializing in React, TypeScript, and modern web technologies." />
   <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
   <meta name="twitter:creator" content="@yourhandle" />
-  
+
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-  
+
   <!-- Preload critical assets -->
   <link rel="preload" href="/fonts/main-font.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/hero-image.webp" as="image" />
-  
+
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#e50914" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  
+
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sidhartha Vyas",
-    "url": "https://yourwebsite.com",
-    "image": "https://yourwebsite.com/profile.jpg",
-    "sameAs": [
-      "https://github.com/Sidharthavyas",
-      "https://linkedin.com/in/sidhartha-vyas",
-      "https://twitter.com/yourusername"
-    ],
-    "jobTitle": "Full-Stack Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Your Company"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Your University"
-    },
-    "knowsAbout": ["React", "TypeScript", "Node.js", "Web Development"]
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sidhartha Vyas",
+      "url": "https://yourwebsite.com",
+      "image": "https://yourwebsite.com/profile.jpg",
+      "sameAs": [
+        "https://github.com/Sidharthavyas",
+        "https://linkedin.com/in/sidhartha-vyas",
+        "https://twitter.com/yourusername"
+      ],
+      "jobTitle": "Full-Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Your Company"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Your University"
+      },
+      "knowsAbout": ["React", "TypeScript", "Node.js", "Web Development"]
+    }
   </script>
-  
+
   <!-- Critical CSS -->
   <style>
-    /* Inline critical CSS for above-the-fold content */
-    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-    .loading-screen { position: fixed; inset: 0; background: #0a0a0a; z-index: 9999; }
-    /* Add more critical styles */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #0a0a0a;
+      z-index: 9999;
+    }
   </style>
-  
+
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="/assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
 </head>
+
 <body>
   <div id="root"></div>
-  
-  <!-- Add fallback for no JavaScript -->
+
+  <!-- Fallback when JavaScript is disabled -->
   <noscript>
     <div style="padding: 2rem; text-align: center;">
       <h1>JavaScript Required</h1>
       <p>Please enable JavaScript to view this portfolio.</p>
     </div>
   </noscript>
-  
+
   <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

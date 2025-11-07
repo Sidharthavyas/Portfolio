@@ -20,11 +20,16 @@ export default defineConfig({
     }),
     // Bundle analyzer
     visualizer({
-      open: true,
+      open: false, // Changed to false for production builds
       gzipSize: true,
       brotliSize: true,
     }),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   build: {
     // Optimize chunks
     rollupOptions: {
@@ -32,7 +37,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
           'animation': ['framer-motion', 'motion'],
-          'ui': ['@/components/HeroSection', '@/components/PathSection'],
+          // Remove the UI chunk or use relative paths
         },
       },
     },
