@@ -1,4 +1,4 @@
-// components/HeroSection.tsx
+// components/HeroSection.tsx (cleaned up version)
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import ShadowBladeVector from '../imports/ShadowBladeVector1';
@@ -9,7 +9,7 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Ambient glow */}
+      {/* Simple ambient glow - no animation */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00ff88] rounded-full blur-[150px]" />
       </div>
@@ -43,38 +43,31 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="mb-8"
         >
           <div className="inline-block relative">
-            {/* Animated glow behind text */}
-            <motion.div
-              className="absolute inset-0 bg-[#00ff88] blur-xl opacity-30"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
+            {/* Subtle static glow behind text */}
+            <div className="absolute inset-0 bg-[#00ff88] blur-xl opacity-20" />
             
-            {/* Main title with typewriter effect - FASTER SPEED */}
+            {/* Main title with FAST typewriter - no distracting effects */}
             <h1 
-              className="relative text-[#e6ffe6] tracking-[0.2em] text-4xl md:text-6xl lg:text-7xl font-bold" 
+              className="relative text-[#e6ffe6] tracking-[0.2em] text-3xl md:text-6xl lg:text-7xl font-bold" 
               style={{ fontFamily: "'Exo 2', sans-serif" }}
             >
               <TypewriterText
                 text="THE SILENT BUILDER"
-                delay={500}
-                speed={15}  // Changed from 35 to 15 for faster typing
+                delay={150}
+                speed={3}
+                accelerate={true}
+                burst={true}
                 className="text-[#e6ffe6] tracking-[0.2em]"
                 style={{ fontFamily: "'Exo 2', sans-serif" }}
-                onComplete={() => setTitleComplete(true)}
+                onComplete={() => {
+                  setTitleComplete(true);
+                }}
               />
             </h1>
           </div>
@@ -82,12 +75,12 @@ export function HeroSection() {
 
         {/* Content that appears after title */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
           className="space-y-6"
         >
-          {/* Quote */}
+          {/* Quote - simple fade in */}
           <motion.p 
             className="text-[#d4d4d4] text-xl opacity-90 max-w-2xl mx-auto italic" 
             style={{ fontFamily: "'Inter', sans-serif" }}
@@ -103,7 +96,7 @@ export function HeroSection() {
             className="space-y-2"
             initial={{ opacity: 0 }}
             animate={titleComplete ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.3 }}
           >
             <p 
               className="text-[#00ff88] text-2xl md:text-3xl font-bold" 
@@ -111,8 +104,10 @@ export function HeroSection() {
             >
               <TypewriterText
                 text="Sidhartha Vyas"
-                delay={titleComplete ? 300 : 99999}
-                speed={20}  // Also made name typing a bit faster
+                delay={titleComplete ? 100 : 99999}
+                speed={5}
+                accelerate={true}
+                burst={true}
                 className="text-[#00ff88]"
                 style={{ fontFamily: "'Exo 2', sans-serif" }}
               />
@@ -121,18 +116,18 @@ export function HeroSection() {
             <motion.p 
               className="text-[#f0f0f0] opacity-90" 
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={titleComplete ? { opacity: 0.9, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ delay: 1.2 }}
+              initial={{ opacity: 0 }}
+              animate={titleComplete ? { opacity: 0.9 } : { opacity: 0 }}
+              transition={{ delay: 0.6 }}
             >
               Software Engineer · Builder · Creator
             </motion.p>
             
             <motion.p 
               className="text-[#9aa0a6] text-sm"
-              initial={{ opacity: 0, y: 10 }}
-              animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ delay: 1.4 }}
+              initial={{ opacity: 0 }}
+              animate={titleComplete ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.7 }}
             >
               Mumbai, India
             </motion.p>
@@ -143,7 +138,7 @@ export function HeroSection() {
             className="flex flex-wrap gap-4 justify-center pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 1.6 }}
+            transition={{ delay: 0.8, ease: 'easeOut' }}
           >
             <motion.button
               onClick={() => {
@@ -175,7 +170,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
           <motion.div
@@ -191,7 +186,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Floating code symbols */}
+        {/* Simple floating code symbols */}
         {['<', '>', '{', '}', '/', '\\'].map((symbol, i) => (
           <motion.div
             key={i}
@@ -202,7 +197,6 @@ export function HeroSection() {
             }}
             animate={{
               y: [0, -30, 0],
-              opacity: [0.05, 0.15, 0.05],
               rotate: [0, 360],
             }}
             transition={{

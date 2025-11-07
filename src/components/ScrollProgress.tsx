@@ -1,48 +1,60 @@
-// components/ScrollProgress.tsx
-import { motion, useScroll, useSpring } from 'motion/react';
+// components/ScrollProgress.tsx - NO PERCENTAGE
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
+  
+  // Smoother spring config for better performance
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 400,
+    damping: 40,
     restDelta: 0.001
   });
 
+  // Transform for percentage width
+  const scrollPercentage = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+
   return (
     <>
-      {/* Top progress bar */}
+      {/* Simplified top progress bar - single element with CSS gradient */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00ff88] via-[#00ffff] to-[#00ff88] origin-left z-50"
-        style={{ scaleX }}
-      >
-        <div className="absolute inset-0 bg-white/30 blur-sm" />
-      </motion.div>
+        className="fixed top-0 left-0 right-0 h-[2px] origin-left z-50 will-change-transform"
+        style={{ 
+          scaleX,
+          background: 'linear-gradient(90deg, #00ff88, #00ffff, #00ff88)',
+          boxShadow: '0 0 10px rgba(0, 255, 136, 0.5)'
+        }}
+      />
 
-      {/* Katana blade indicator */}
+      {/* Simplified katana blade indicator */}
       <motion.div
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 0.5 }}
+        className="fixed top-3 left-1/2 -translate-x-1/2 z-50"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        <div className="relative w-64 h-2 bg-[#1a1a1a] border border-[#00ff88]/30 rounded-full overflow-hidden">
+        <div className="relative w-48 h-1 bg-[#1a1a1a]/80 rounded-full overflow-hidden backdrop-blur-sm">
+          {/* Progress fill */}
           <motion.div
             className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#00ff88] to-[#00ffff]"
-            style={{ width: scrollYProgress }}
-          >
-            <div className="absolute inset-0 bg-white/20 blur-sm" />
-          </motion.div>
+            style={{ width: scrollPercentage }}
+          />
 
-          {/* Blade tip */}
+          {/* Simplified blade tip using CSS only */}
           <motion.div
-            className="absolute top-1/2 -translate-y-1/2 w-6 h-6"
+            className="absolute top-1/2 -translate-y-1/2 w-4 h-4"
             style={{ 
-              left: scrollYProgress,
-              x: '-50%'
+              left: scrollPercentage,
+              transform: 'translate(-50%, -50%)'
             }}
           >
-            <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-[#00ff88] rotate-90 drop-shadow-[0_0_8px_rgba(0,255,136,0.8)]" />
+            <div 
+              className="w-full h-full bg-[#00ff88] rotate-45"
+              style={{
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
+                filter: 'drop-shadow(0 0 4px rgba(0, 255, 136, 0.8))'
+              }}
+            />
           </motion.div>
         </div>
       </motion.div>
