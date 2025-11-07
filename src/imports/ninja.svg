@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0B0B0B"></rect>
+  
+  <!-- Head -->
+  <circle cx="32" cy="32" r="24" fill="#000000"></circle>
+
+  <!-- Mask band -->
+  <rect x="12" y="22" width="40" height="10" rx="2" fill="#0B0B0B"></rect>
+
+  <!-- Eyes background -->
+  <path d="M16 31 Q32 18 48 31 Q32 28 16 31" fill="#E6D9B8"></path>
+
+  <!-- Left eye -->
+  <path d="M22 30 q4-5 9 0 q-4 3-9 0" fill="#000000"></path>
+
+  <!-- Right eye -->
+  <path d="M33 30 q4-5 9 0 q-4 3-9 0" fill="#000000"></path>
+
+  <!-- Side knots -->
+  <path d="M46 18 l10 4 -8 6 z" fill="#000000"></path>
+  <path d="M18 18 l-10 4 8 6 z" fill="#000000"></path>
+</svg>
