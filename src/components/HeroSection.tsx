@@ -1,4 +1,4 @@
-// components/HeroSection.tsx (cleaned up version)
+// components/HeroSection.tsx (fixed responsive version)
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import ShadowBladeVector from '../imports/ShadowBladeVector1';
@@ -19,7 +19,7 @@ export function HeroSection() {
         initial={{ opacity: 0, x: -100, rotate: -5 }}
         animate={{ opacity: 0.15, x: 0, rotate: 0 }}
         transition={{ duration: 2, ease: 'easeOut', delay: 0.5 }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] pointer-events-none"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] pointer-events-none"
         style={{ filter: 'drop-shadow(0 0 30px rgba(0, 255, 136, 0.3))' }}
       >
         <motion.div
@@ -41,20 +41,20 @@ export function HeroSection() {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
           <div className="inline-block relative">
             {/* Subtle static glow behind text */}
             <div className="absolute inset-0 bg-[#00ff88] blur-xl opacity-20" />
             
-            {/* Main title with FAST typewriter - no distracting effects */}
+            {/* Main title with FAST typewriter - responsive text */}
             <h1 
-              className="relative text-[#e6ffe6] tracking-[0.2em] text-3xl md:text-6xl lg:text-7xl font-bold" 
+              className="relative text-[#e6ffe6] tracking-[0.05em] xs:tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
               style={{ fontFamily: "'Exo 2', sans-serif" }}
             >
               <TypewriterText
@@ -63,7 +63,7 @@ export function HeroSection() {
                 speed={3}
                 accelerate={true}
                 burst={true}
-                className="text-[#e6ffe6] tracking-[0.2em]"
+                className="text-[#e6ffe6]"
                 style={{ fontFamily: "'Exo 2', sans-serif" }}
                 onComplete={() => {
                   setTitleComplete(true);
@@ -78,11 +78,11 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           {/* Quote - simple fade in */}
           <motion.p 
-            className="text-[#d4d4d4] text-xl opacity-90 max-w-2xl mx-auto italic" 
+            className="text-[#d4d4d4] text-base sm:text-lg md:text-xl opacity-90 max-w-2xl mx-auto italic px-4" 
             style={{ fontFamily: "'Inter', sans-serif" }}
             initial={{ opacity: 0 }}
             animate={titleComplete ? { opacity: 0.9 } : { opacity: 0 }}
@@ -99,7 +99,7 @@ export function HeroSection() {
             transition={{ delay: 0.3 }}
           >
             <p 
-              className="text-[#00ff88] text-2xl md:text-3xl font-bold" 
+              className="text-[#00ff88] text-xl sm:text-2xl md:text-3xl font-bold" 
               style={{ fontFamily: "'Exo 2', sans-serif" }}
             >
               <TypewriterText
@@ -114,7 +114,7 @@ export function HeroSection() {
             </p>
             
             <motion.p 
-              className="text-[#f0f0f0] opacity-90" 
+              className="text-[#f0f0f0] opacity-90 text-sm sm:text-base" 
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               initial={{ opacity: 0 }}
               animate={titleComplete ? { opacity: 0.9 } : { opacity: 0 }}
@@ -124,7 +124,7 @@ export function HeroSection() {
             </motion.p>
             
             <motion.p 
-              className="text-[#9aa0a6] text-sm"
+              className="text-[#9aa0a6] text-xs sm:text-sm"
               initial={{ opacity: 0 }}
               animate={titleComplete ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.7 }}
@@ -135,7 +135,7 @@ export function HeroSection() {
 
           {/* Call to action buttons */}
           <motion.div
-            className="flex flex-wrap gap-4 justify-center pt-8"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center pt-6 sm:pt-8 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={titleComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.8, ease: 'easeOut' }}
@@ -144,7 +144,7 @@ export function HeroSection() {
               onClick={() => {
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-3 bg-[#00ff88] text-black font-bold rounded-full uppercase tracking-wide transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] hover:scale-105"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 bg-[#00ff88] text-black font-bold rounded-full uppercase tracking-wide transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,136,0.6)] hover:scale-105 text-sm sm:text-base"
               style={{ fontFamily: "'Exo 2', sans-serif" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -156,7 +156,7 @@ export function HeroSection() {
               onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-3 border-2 border-[#00ff88] text-[#00ff88] font-bold rounded-full uppercase tracking-wide transition-all duration-300 hover:bg-[#00ff88]/10 hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:scale-105"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-[#00ff88] text-[#00ff88] font-bold rounded-full uppercase tracking-wide transition-all duration-300 hover:bg-[#00ff88]/10 hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] hover:scale-105 text-sm sm:text-base"
               style={{ fontFamily: "'Exo 2', sans-serif" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -166,12 +166,12 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - hidden on very small screens */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 hidden sm:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -186,29 +186,31 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Simple floating code symbols */}
-        {['<', '>', '{', '}', '/', '\\'].map((symbol, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-[#00ff88] opacity-10 text-4xl font-mono pointer-events-none select-none"
-            style={{
-              left: `${10 + (i * 15)}%`,
-              top: `${20 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 10 + i * 2,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: 'easeInOut',
-            }}
-          >
-            {symbol}
-          </motion.div>
-        ))}
+        {/* Simple floating code symbols - hidden on mobile */}
+        <div className="hidden md:block">
+          {['<', '>', '{', '}', '/', '\\'].map((symbol, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-[#00ff88] opacity-10 text-2xl lg:text-4xl font-mono pointer-events-none select-none"
+              style={{
+                left: `${10 + (i * 15)}%`,
+                top: `${20 + (i % 3) * 20}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 10 + i * 2,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: 'easeInOut',
+              }}
+            >
+              {symbol}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
